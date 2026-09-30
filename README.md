@@ -1,1 +1,1 @@
-# PROGRAMMING-LAB-I codes for Erciyes University Software Engineering Department. 
+# PROGRAMMING-LAB-I lessons codes for Erciyes University Software Engineering Department. 
