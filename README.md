@@ -1,1 +1,1 @@
-# PROGRAMMING-LAB-I codes for Erciyes University Softwware Engineering Department. 
+# PROGRAMMING-LAB-I codes for Erciyes University Software Engineering Department. 
