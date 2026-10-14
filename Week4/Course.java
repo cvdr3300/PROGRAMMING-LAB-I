@@ -1,0 +1,30 @@
+package programminglaboratory1_week4;
+
+import java.util.ArrayList;
+
+public class Course {
+    public String courseName;
+    public int capacity;
+    public ArrayList<Student> enrolledStudents;
+
+    public Course(String courseName, int capacity) {
+        this.courseName = courseName;
+        this.capacity = capacity;
+        this.enrolledStudents = new ArrayList<>();
+    }
+
+    public void displayCourse() {
+        System.out.println("Course: " + courseName + " | Capacity: " + capacity + 
+                           " | Enrolled: " + enrolledStudents.size());
+        if (enrolledStudents.isEmpty()) {
+            System.out.println("  No students enrolled yet.");
+        } else {
+            System.out.print("  Students: ");
+            for (int i = 0; i < enrolledStudents.size(); i++) {
+                System.out.print(enrolledStudents.get(i).name + 
+                                 (i < enrolledStudents.size() - 1 ? ", " : ""));
+            }
+            System.out.println();
+        }
+    }
+}
