@@ -9,7 +9,6 @@ public class ProgrammingLaboratory1_Week4 {
         Scanner in = new Scanner(System.in);
         ArrayList<Course> courses = new ArrayList<>();
 
-        // 3. Course Setup
         System.out.print("How many courses to create (at least 3): ");
         int courseCount = in.nextInt();
         in.nextLine(); // Buffer temizleme
@@ -26,13 +25,11 @@ public class ProgrammingLaboratory1_Week4 {
             courses.add(new Course(name, cap));
         }
 
-        // Mevcut kursları listele
         System.out.println("\n--- Available Courses ---");
         for (Course c : courses) {
             System.out.println("- " + c.courseName + " (Capacity: " + c.capacity + ")");
         }
 
-        // 4. Register Students
         System.out.println("\n--- Student Registration ---");
         System.out.print("Enter student ID: ");
         String sId = in.nextLine().trim();
@@ -43,7 +40,6 @@ public class ProgrammingLaboratory1_Week4 {
         System.out.print("Enter course name to register: ");
         String targetCourseName = in.nextLine().trim();
 
-        // Kursu ara
         Course selectedCourse = null;
         for (Course c : courses) {
             if (c.courseName.equalsIgnoreCase(targetCourseName)) {
@@ -57,7 +53,6 @@ public class ProgrammingLaboratory1_Week4 {
         } else if (selectedCourse.enrolledStudents.size() >= selectedCourse.capacity) {
             System.out.println("This course is full. Registration failed.");
         } else {
-            // Öğrenci zaten kayıtlı mı kontrolü (studentID bazlı)
             boolean alreadyEnrolled = false;
             for (Student s : selectedCourse.enrolledStudents) {
                 if (s.studentID.equalsIgnoreCase(sId)) {
@@ -75,7 +70,6 @@ public class ProgrammingLaboratory1_Week4 {
             }
         }
 
-        // 5. View All Courses
         System.out.println("\n================ All Courses ================");
         for (Course c : courses) {
             c.displayCourse();
