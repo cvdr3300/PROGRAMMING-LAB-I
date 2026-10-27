@@ -1,0 +1,28 @@
+package programminglaboratory1_week6;
+
+public class EconomyRide extends Ride {
+    private double pricePerMinute;
+
+    public EconomyRide(double pricePerMinute, String passengerName, String pickup, String destination, double distanceKm, int durationMin, double pricePerKm) {
+        super(passengerName, pickup, destination, distanceKm, durationMin, pricePerKm);
+        this.pricePerMinute = pricePerMinute;
+    }
+
+    @Override
+    public double calculateFare() {
+        double total = super.calculateFare() + (getDurationMin() * this.pricePerMinute);
+        if (total < 50.0) {
+            return 50.0;
+        }
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " -> EconomyRide{pricePerMinute=" + pricePerMinute + "}";
+    }
+
+    public double getPricePerMinute() {
+        return pricePerMinute;
+    }
+}
